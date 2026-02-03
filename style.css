@@ -75,6 +75,15 @@ lotto-numbers {
     text-align: left;
 }
 
+#comment-section {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+#disqus_thread {
+    margin-top: 1rem;
+}
+
 #partnership-form p {
     font-size: 0.9rem;
     color: var(--secondary-color);
