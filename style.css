@@ -31,9 +31,11 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s;
+    max-width: 600px; /* Limit container width for better form presentation */
+    width: 90%;
 }
 
-h1 {
+h1, h2 {
     color: var(--accent-color);
 }
 
@@ -59,8 +61,81 @@ body.light-mode #generate-btn:hover, body.light-mode #theme-toggle-btn:hover {
     background-color: #0056b3;
 }
 
-
 lotto-numbers {
     display: block;
     margin-top: 2rem;
+}
+
+/* Formspree Form Styles */
+#partnership-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+#partnership-form p {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+#partnership-form input[type="text"],
+#partnership-form input[type="email"],
+#partnership-form textarea {
+    padding: 0.8rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#partnership-form input[type="text"]::placeholder,
+#partnership-form input[type="email"]::placeholder,
+#partnership-form textarea::placeholder {
+    color: rgba(var(--secondary-color-rgb), 0.7); /* Adjust placeholder color */
+}
+
+#partnership-form input[type="text"]:focus,
+#partnership-form input[type="email"]:focus,
+#partnership-form textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(var(--accent-color-rgb), 0.5);
+}
+
+#partnership-form button[type="submit"] {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: center; /* Center the submit button */
+}
+
+#partnership-form button[type="submit"]:hover {
+    background-color: #ffca2c;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode #partnership-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Define RGB values for color variables for rgba usage */
+:root {
+    --secondary-color-rgb: 240, 240, 240; /* F0F0F0 */
+    --accent-color-rgb: 255, 193, 7;     /* FFC107 */
+}
+
+body.light-mode {
+    --secondary-color-rgb: 51, 51, 51;    /* 333333 */
+    --accent-color-rgb: 0, 123, 255;      /* 007BFF */
 }
