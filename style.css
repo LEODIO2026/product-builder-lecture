@@ -591,6 +591,22 @@ input[type="file"] {
     line-height: 1.7;
 }
 
+/* Comments Section */
+.comments-section {
+    background-color: var(--primary-color);
+}
+
+.disqus-container {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+#disqus_thread {
+    min-height: 200px;
+}
+
 /* Contact Page */
 .contact-page {
     padding: 4rem 2rem;
