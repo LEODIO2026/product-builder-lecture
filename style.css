@@ -181,3 +181,28 @@ body.light-mode .custom-file-upload:hover {
     line-height: 1.6;
 
 }
+
+.retry-button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+}
+
+.retry-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode .retry-button {
+    color: var(--primary-color);
+}
+
+body.light-mode .retry-button:hover {
+    background-color: #0056b3;
+}

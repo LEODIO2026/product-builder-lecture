@@ -1,7 +1,7 @@
 // Teachable Machine model URL
 const URL = "https://teachablemachine.withgoogle.com/models/KQmUJ34Ph/";
 
-let model, labelContainer, maxPredictions;
+let model, labelContainer, maxPredictions, uploadContainer, imagePreviewContainer;
 
 // --- Theme Toggle Logic (Kept from previous version) ---
 const themeToggleBtn = document.getElementById('theme-toggle-btn');
@@ -43,6 +43,8 @@ async function init() {
         model = await tmImage.load(modelURL, metadataURL);
         maxPredictions = model.getTotalClasses();
         labelContainer = document.getElementById("label-container");
+        uploadContainer = document.getElementById("upload-container");
+        imagePreviewContainer = document.getElementById("image-preview-container");
         
         // Add event listener for file upload
         imageUploadInput.addEventListener('change', handleImageUpload);
@@ -62,6 +64,7 @@ function handleImageUpload(event) {
         reader.onload = function(e) {
             imagePreview.src = e.target.result;
             imagePreview.style.display = 'block';
+            uploadContainer.style.display = 'none';
             
             // Clear previous results
             labelContainer.innerHTML = ''; 
@@ -112,8 +115,24 @@ async function predict(imageElement) {
         
         labelContainer.appendChild(resultDiv);
         labelContainer.appendChild(descriptionDiv);
+
+        // Add "Try Again" button
+        const retryButton = document.createElement("button");
+        retryButton.textContent = "다시하기";
+        retryButton.className = "retry-button"; // Add a class for styling
+        retryButton.addEventListener('click', resetUI);
+        labelContainer.appendChild(retryButton);
+
     } catch (e) {
         console.error("Error during prediction:", e);
         labelContainer.innerHTML = "<div class='result-message'>얼굴 분석 중 오류가 발생했습니다. 다른 사진으로 시도해 보세요.</div>";
     }
+}
+
+function resetUI() {
+    imagePreview.style.display = 'none';
+    imagePreview.src = '#'; // Clear image source
+    labelContainer.innerHTML = '';
+    uploadContainer.style.display = 'block';
+    imageUploadInput.value = ''; // Clear file input
 }
