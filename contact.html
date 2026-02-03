@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-9737219450188529">
+    <meta name="description" content="동물상 테스트 제휴문의 - 광고, 협업, 제안 등 문의사항을 보내주세요.">
+    <title>제휴문의 | 동물상 테스트</title>
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9737219450188529"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">동물상 테스트</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#test-section">테스트 하기</a></li>
+                <li><a href="index.html#about-section">소개</a></li>
+                <li><a href="index.html#faq-section">FAQ</a></li>
+                <li><a href="contact.html">제휴문의</a></li>
+            </ul>
+            <button id="theme-toggle-btn" class="theme-btn">다크모드</button>
+        </div>
+    </nav>
+
+    <main class="contact-page">
+        <div class="container">
+            <h1>제휴문의</h1>
+            <p class="contact-description">
+                광고, 협업, 제안 등 문의사항이 있으시면 아래 양식을 통해 연락해 주세요.<br>
+                빠른 시일 내에 답변 드리겠습니다.
+            </p>
+
+            <div class="contact-container">
+                <form action="https://formspree.io/f/mykpondr" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">이름 / 회사명 <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required placeholder="홍길동 / ABC 회사">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">이메일 <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="example@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inquiry-type">문의 유형 <span class="required">*</span></label>
+                        <select id="inquiry-type" name="inquiry-type" required>
+                            <option value="">선택해주세요</option>
+                            <option value="광고 문의">광고 문의</option>
+                            <option value="제휴 제안">제휴 제안</option>
+                            <option value="협업 요청">협업 요청</option>
+                            <option value="기술 지원">기술 지원</option>
+                            <option value="기타">기타</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">제목 <span class="required">*</span></label>
+                        <input type="text" id="subject" name="subject" required placeholder="문의 제목을 입력해주세요">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">문의 내용 <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="6" required placeholder="문의하실 내용을 자세히 작성해주세요."></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="privacy-agree" required>
+                            <span><a href="privacy.html" target="_blank">개인정보처리방침</a>에 동의합니다. <span class="required">*</span></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">문의하기</button>
+                </form>
+
+                <div class="contact-info">
+                    <h3>기타 연락처</h3>
+                    <div class="info-item">
+                        <strong>이메일</strong>
+                        <p>contact@example.com</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>응답 시간</strong>
+                        <p>평일 기준 1-2일 이내</p>
+                    </div>
+                    <div class="info-notice">
+                        <p>* 광고 및 제휴 관련 문의는 구체적인 내용과 함께 보내주시면 더 빠른 검토가 가능합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>동물상 테스트</h3>
+                    <p>AI 기반의 재미있는 동물상 분석 서비스</p>
+                </div>
+                <div class="footer-section">
+                    <h3>법적 고지</h3>
+                    <ul>
+                        <li><a href="privacy.html">개인정보처리방침</a></li>
+                        <li><a href="terms.html">이용약관</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>문의</h3>
+                    <ul>
+                        <li><a href="contact.html">제휴문의</a></li>
+                        <li>이메일: contact@example.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 동물상 테스트. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
