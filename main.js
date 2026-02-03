@@ -75,43 +75,40 @@ function handleImageUpload(event) {
 
 // run the uploaded image through the image model
 async function predict(imageElement) {
-    // predict can take in an image, video or canvas html element
     const prediction = await model.predict(imageElement);
     
     labelContainer.innerHTML = ''; // Clear for new predictions
     let highestProb = 0;
     let winner = null;
 
+    // Find the winner
     for (let i = 0; i < maxPredictions; i++) {
-        const classPrediction = `${prediction[i].className}: ${Math.round(prediction[i].probability * 100)}%`;
-        
-        const resultDiv = document.createElement("div");
-        resultDiv.className = "result-message";
-        resultDiv.innerHTML = classPrediction;
-
-        if (prediction[i].className === "강아지 (Dog)") {
-            resultDiv.classList.add("dog-result");
-        } else if (prediction[i].className === "고양이 (Cat)") {
-            resultDiv.classList.add("cat-result");
-        }
-        
         if (prediction[i].probability > highestProb) {
             highestProb = prediction[i].probability;
             winner = prediction[i].className;
         }
-
-        labelContainer.appendChild(resultDiv);
     }
 
-    // Add descriptive text based on the winner
+    // Display the main result
+    const resultDiv = document.createElement("div");
+    resultDiv.className = "result-message";
+    
+    // Display the fun description
     const descriptionDiv = document.createElement("div");
     descriptionDiv.className = "result-description";
-    
+
     if (winner === "강아지 (Dog)") {
-        descriptionDiv.innerHTML = "<h3>강아지상 특징</h3><p>선하고 귀여운 눈매, 다정하고 활발한 인상을 줍니다. 사람들에게 친근함과 편안함을 느끼게 하는 매력적인 얼굴입니다.</p>";
+        resultDiv.innerHTML = `결과는... 강아지상! 🐶`;
+        resultDiv.classList.add("dog-result");
+        descriptionDiv.innerHTML = "<h3>멍뭉미 폭발! 당신은 강아지상</h3><p>사람을 좋아하고 애교가 철철 넘치는 당신! 주변에 행복 바이러스를 전파하는 당신은 천상 강아지상! 복슬복슬한 강아지처럼 포근하고 사랑스러운 매력을 가졌네요.</p>";
     } else if (winner === "고양이 (Cat)") {
-        descriptionDiv.innerHTML = "<h3>고양이상 특징</h3><p>날카로운 눈매와 도도한 분위기가 특징입니다. 시크하면서도 알 수 없는 매력으로 사람들의 호기심을 자극하는 얼굴입니다.</p>";
+        resultDiv.innerHTML = `결과는... 고양이상! 🐱`;
+        resultDiv.classList.add("cat-result");
+        descriptionDiv.innerHTML = "<h3>시크한 매력! 당신은 고양이상</h3><p>알 수 없는 눈빛으로 시선을 사로잡는 당신! 츤데레 같지만, 한번 빠지면 헤어나올 수 없는 매력의 소유자군요. 도도하고 우아한 고양이처럼 모두가 당신에게 궁금증을 가질 거예요.</p>";
+    } else {
+        resultDiv.innerHTML = "얼굴을 분석하고 있어요...";
     }
     
+    labelContainer.appendChild(resultDiv);
     labelContainer.appendChild(descriptionDiv);
 }

@@ -124,11 +124,11 @@ body.light-mode .custom-file-upload:hover {
 
 #label-container {
     margin-top: 1.5rem;
-    font-size: 1.2rem; /* Adjusted font size for better fit */
-    font-weight: bold;
 }
 
 .result-message {
+    font-size: 1.8rem;
+    font-weight: bold;
     margin-top: 0.5rem;
 }
 
