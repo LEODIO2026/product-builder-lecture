@@ -101,16 +101,19 @@ async function predict(imageElement) {
         const descriptionDiv = document.createElement("div");
         descriptionDiv.className = "result-description";
 
-        if (winner === "강아지 (Dog)") {
+        const winnerLower = winner ? winner.toLowerCase() : "";
+
+        if (winnerLower.includes("dog") || winnerLower.includes("강아지")) {
             resultDiv.innerHTML = `결과는... 강아지상! 🐶`;
             resultDiv.classList.add("dog-result");
             descriptionDiv.innerHTML = "<h3>멍뭉미 폭발! 당신은 강아지상</h3><p>사람을 좋아하고 애교가 철철 넘치는 당신! 주변에 행복 바이러스를 전파하는 당신은 천상 강아지상! 복슬복슬한 강아지처럼 포근하고 사랑스러운 매력을 가졌네요.</p>";
-        } else if (winner === "고양이 (Cat)") {
+        } else if (winnerLower.includes("cat") || winnerLower.includes("고양이")) {
             resultDiv.innerHTML = `결과는... 고양이상! 🐱`;
             resultDiv.classList.add("cat-result");
             descriptionDiv.innerHTML = "<h3>시크한 매력! 당신은 고양이상</h3><p>알 수 없는 눈빛으로 시선을 사로잡는 당신! 츤데레 같지만, 한번 빠지면 헤어나올 수 없는 매력의 소유자군요. 도도하고 우아한 고양이처럼 모두가 당신에게 궁금증을 가질 거예요.</p>";
         } else {
-            resultDiv.innerHTML = "얼굴을 분석하고 있어요...";
+            resultDiv.innerHTML = `결과: ${winner}`;
+            descriptionDiv.innerHTML = "<p>분석이 완료되었습니다!</p>";
         }
         
         labelContainer.appendChild(resultDiv);
