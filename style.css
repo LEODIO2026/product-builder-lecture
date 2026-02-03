@@ -137,5 +137,47 @@ body.light-mode .custom-file-upload:hover {
 }
 
 .cat-result {
+
     color: #2196f3; /* Blue for cat */
+
+}
+
+
+
+.result-description {
+
+    margin-top: 2rem;
+
+    padding-top: 1.5rem;
+
+    border-top: 1px solid var(--secondary-color);
+
+    text-align: left;
+
+    font-size: 1rem;
+
+    font-weight: normal;
+
+}
+
+
+
+.result-description h3 {
+
+    margin-top: 0;
+
+    font-size: 1.2rem;
+
+    color: var(--accent-color);
+
+}
+
+
+
+.result-description p {
+
+    margin-bottom: 0;
+
+    line-height: 1.6;
+
 }

@@ -79,6 +79,9 @@ async function predict(imageElement) {
     const prediction = await model.predict(imageElement);
     
     labelContainer.innerHTML = ''; // Clear for new predictions
+    let highestProb = 0;
+    let winner = null;
+
     for (let i = 0; i < maxPredictions; i++) {
         const classPrediction = `${prediction[i].className}: ${Math.round(prediction[i].probability * 100)}%`;
         
@@ -92,6 +95,23 @@ async function predict(imageElement) {
             resultDiv.classList.add("cat-result");
         }
         
+        if (prediction[i].probability > highestProb) {
+            highestProb = prediction[i].probability;
+            winner = prediction[i].className;
+        }
+
         labelContainer.appendChild(resultDiv);
     }
+
+    // Add descriptive text based on the winner
+    const descriptionDiv = document.createElement("div");
+    descriptionDiv.className = "result-description";
+    
+    if (winner === "강아지 (Dog)") {
+        descriptionDiv.innerHTML = "<h3>강아지상 특징</h3><p>선하고 귀여운 눈매, 다정하고 활발한 인상을 줍니다. 사람들에게 친근함과 편안함을 느끼게 하는 매력적인 얼굴입니다.</p>";
+    } else if (winner === "고양이 (Cat)") {
+        descriptionDiv.innerHTML = "<h3>고양이상 특징</h3><p>날카로운 눈매와 도도한 분위기가 특징입니다. 시크하면서도 알 수 없는 매력으로 사람들의 호기심을 자극하는 얼굴입니다.</p>";
+    }
+    
+    labelContainer.appendChild(descriptionDiv);
 }
