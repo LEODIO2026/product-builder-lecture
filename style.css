@@ -22,6 +22,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    padding: 1rem 0;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -44,7 +45,7 @@ p {
     margin-bottom: 1.5rem;
 }
 
-#start-btn, #theme-toggle-btn {
+#theme-toggle-btn {
     background-color: var(--accent-color);
     color: var(--primary-color);
     border: none;
@@ -56,42 +57,79 @@ p {
     margin: 0.5rem;
 }
 
-#start-btn:hover, #theme-toggle-btn:hover {
+#theme-toggle-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-body.light-mode #start-btn, body.light-mode #theme-toggle-btn {
+body.light-mode #theme-toggle-btn {
     color: var(--primary-color);
 }
 
-body.light-mode #start-btn:hover, body.light-mode #theme-toggle-btn:hover {
+body.light-mode #theme-toggle-btn:hover {
     background-color: #0056b3;
 }
 
-#webcam-container {
+#upload-container {
+    margin: 1.5rem 0;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid var(--accent-color);
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.custom-file-upload:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode .custom-file-upload {
+     color: var(--primary-color);
+}
+
+body.light-mode .custom-file-upload:hover {
+    background-color: #0056b3;
+}
+
+
+#image-preview-container {
     margin: 2rem auto;
     width: 300px;
     height: 300px;
-    border: 2px solid var(--secondary-color);
+    border: 2px dashed var(--secondary-color);
     border-radius: 10px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#webcam-container canvas {
-    width: 100% !important;
-    height: 100% !important;
+#image-preview {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
-
 
 #label-container {
     margin-top: 1.5rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Adjusted font size for better fit */
     font-weight: bold;
 }
 
 .result-message {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 .dog-result {
