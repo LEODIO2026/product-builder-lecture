@@ -3,20 +3,29 @@ const URL = "https://teachablemachine.withgoogle.com/models/KQmUJ34Ph/";
 
 let model, labelContainer, maxPredictions, uploadContainer, imagePreviewContainer;
 
-// --- Theme Toggle Logic (Kept from previous version) ---
+// --- Theme Toggle Logic ---
 const themeToggleBtn = document.getElementById('theme-toggle-btn');
 const body = document.body;
 
-themeToggleBtn.addEventListener('click', () => {
-    body.classList.toggle('light-mode');
-    
-    // Save theme preference
-    if (body.classList.contains('light-mode')) {
-        localStorage.setItem('theme', 'light');
-    } else {
-        localStorage.setItem('theme', 'dark');
+function updateThemeButton() {
+    if (themeToggleBtn) {
+        themeToggleBtn.textContent = body.classList.contains('light-mode') ? '다크모드' : '라이트모드';
     }
-});
+}
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+
+        // Save theme preference
+        if (body.classList.contains('light-mode')) {
+            localStorage.setItem('theme', 'light');
+        } else {
+            localStorage.setItem('theme', 'dark');
+        }
+        updateThemeButton();
+    });
+}
 
 // Apply saved theme on load
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,8 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedTheme === 'light') {
         body.classList.add('light-mode');
     }
-    // Load the model as soon as the page is ready
-    init();
+    updateThemeButton();
+
+    // Only load model if on main page
+    if (document.getElementById('image-upload-input')) {
+        init();
+    }
 });
 // --- End of Theme Toggle Logic ---
 
@@ -65,9 +78,12 @@ function handleImageUpload(event) {
             imagePreview.src = e.target.result;
             imagePreview.style.display = 'block';
             uploadContainer.style.display = 'none';
-            
+            if (imagePreviewContainer) {
+                imagePreviewContainer.style.display = 'block';
+            }
+
             // Clear previous results
-            labelContainer.innerHTML = ''; 
+            labelContainer.innerHTML = '';
 
             // Wait for the image to be fully loaded before predicting
             imagePreview.onload = () => predict(imagePreview);
@@ -137,5 +153,8 @@ function resetUI() {
     imagePreview.src = '#'; // Clear image source
     labelContainer.innerHTML = '';
     uploadContainer.style.display = 'block';
+    if (imagePreviewContainer) {
+        imagePreviewContainer.style.display = 'none';
+    }
     imageUploadInput.value = ''; // Clear file input
 }

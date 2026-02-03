@@ -4,29 +4,256 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-9737219450188529">
-    <title>동물상 테스트 (파일 업로드)</title>
+    <meta name="description" content="AI 인공지능이 분석하는 동물상 테스트! 당신은 강아지상일까요, 고양이상일까요? 사진 한 장으로 재미있게 알아보세요.">
+    <meta name="keywords" content="동물상 테스트, 강아지상, 고양이상, AI 얼굴 분석, 관상 테스트, 얼굴상 테스트">
+    <meta name="author" content="동물상 테스트">
+    <meta property="og:title" content="AI 동물상 테스트 - 강아지상 vs 고양이상">
+    <meta property="og:description" content="인공지능이 분석하는 나의 동물상! 사진 한 장으로 재미있게 알아보세요.">
+    <meta property="og:type" content="website">
+    <title>AI 동물상 테스트 - 강아지상 vs 고양이상 | 무료 얼굴 분석</title>
     <link rel="stylesheet" href="style.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9737219450188529"
         crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>동물상 테스트</h1>
-        <h2>강아지상? 혹은 고양이상?</h2>
-        <p>인공지능이 당신의 사진을 분석하여 어떤 동물상에 가까운지 알려드립니다.</p>
-        <button id="theme-toggle-btn">Toggle Theme</button>
-        
-        <div id="upload-container">
-            <input type="file" id="image-upload-input" accept="image/*">
-            <label for="image-upload-input" class="custom-file-upload">이미지 선택</label>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">동물상 테스트</a>
+            <ul class="nav-menu">
+                <li><a href="#test-section">테스트 하기</a></li>
+                <li><a href="#about-section">소개</a></li>
+                <li><a href="#how-it-works">이용 방법</a></li>
+                <li><a href="#faq-section">FAQ</a></li>
+            </ul>
+            <button id="theme-toggle-btn" class="theme-btn">다크모드</button>
         </div>
-        
-        <div id="image-preview-container">
-            <img id="image-preview" src="#" alt="업로드된 이미지 미리보기" style="display:none;"/>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <h1>AI 동물상 테스트</h1>
+            <h2>강아지상일까? 고양이상일까?</h2>
+            <p class="hero-description">
+                최신 인공지능 기술로 당신의 얼굴을 분석하여<br>
+                어떤 동물상에 가까운지 알려드립니다.
+            </p>
+            <a href="#test-section" class="cta-button">무료로 테스트하기</a>
         </div>
-        
-        <div id="label-container"></div>
-    </div>
+    </header>
+
+    <!-- Main Test Section -->
+    <main>
+        <section id="test-section" class="test-section">
+            <div class="container">
+                <h2 class="section-title">동물상 테스트</h2>
+                <p class="section-description">사진을 업로드하면 AI가 분석을 시작합니다.</p>
+
+                <div class="test-container">
+                    <div id="upload-container">
+                        <input type="file" id="image-upload-input" accept="image/*">
+                        <label for="image-upload-input" class="custom-file-upload">
+                            <span class="upload-icon">+</span>
+                            <span>이미지 선택</span>
+                        </label>
+                        <p class="upload-hint">JPG, PNG 파일 지원 (최대 10MB)</p>
+                    </div>
+
+                    <div id="image-preview-container">
+                        <img id="image-preview" src="#" alt="업로드된 이미지 미리보기" style="display:none;"/>
+                    </div>
+
+                    <div id="label-container"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about-section" class="about-section">
+            <div class="container">
+                <h2 class="section-title">동물상 테스트란?</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            <strong>동물상 테스트</strong>는 사람의 얼굴 특징을 분석하여 어떤 동물과 닮았는지 알아보는
+                            재미있는 테스트입니다. 한국에서는 특히 <strong>강아지상</strong>과 <strong>고양이상</strong>으로
+                            나누어 분석하는 것이 인기가 많습니다.
+                        </p>
+                        <p>
+                            <strong>강아지상</strong>은 일반적으로 친근하고 귀여운 인상을 주며, 둥근 눈과 부드러운 이목구비가 특징입니다.
+                            반면 <strong>고양이상</strong>은 날카롭고 시크한 매력이 있으며, 올라간 눈꼬리와 갸름한 얼굴형이 특징입니다.
+                        </p>
+                        <p>
+                            저희 서비스는 <strong>Google Teachable Machine</strong>으로 학습된 AI 모델을 사용하여
+                            얼굴 특징을 분석합니다. 재미로 즐겨주세요!
+                        </p>
+                    </div>
+                    <div class="about-features">
+                        <div class="feature-card">
+                            <h3>빠른 분석</h3>
+                            <p>사진 업로드 즉시 AI가 분석을 시작합니다.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>무료 이용</h3>
+                            <p>회원가입 없이 누구나 무료로 이용 가능합니다.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>개인정보 보호</h3>
+                            <p>업로드된 사진은 서버에 저장되지 않습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="how-section">
+            <div class="container">
+                <h2 class="section-title">이용 방법</h2>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>사진 선택</h3>
+                        <p>테스트할 사진을 선택합니다. 정면 얼굴 사진이 가장 정확합니다.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>AI 분석</h3>
+                        <p>인공지능이 얼굴의 특징을 분석하여 동물상을 판별합니다.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>결과 확인</h3>
+                        <p>강아지상인지 고양이상인지 결과와 재미있는 설명을 확인하세요!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section class="tips-section">
+            <div class="container">
+                <h2 class="section-title">정확한 결과를 위한 팁</h2>
+                <ul class="tips-list">
+                    <li><strong>정면 사진 사용:</strong> 얼굴이 정면을 향한 사진이 가장 정확한 결과를 제공합니다.</li>
+                    <li><strong>밝은 조명:</strong> 어두운 사진보다 밝고 선명한 사진이 분석에 유리합니다.</li>
+                    <li><strong>얼굴만 나오게:</strong> 배경이 복잡하지 않고 얼굴이 잘 보이는 사진을 선택하세요.</li>
+                    <li><strong>자연스러운 표정:</strong> 자연스러운 표정의 사진이 가장 좋은 결과를 보여줍니다.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq-section" class="faq-section">
+            <div class="container">
+                <h2 class="section-title">자주 묻는 질문 (FAQ)</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <h3 class="faq-question">Q. 동물상 테스트는 정확한가요?</h3>
+                        <p class="faq-answer">
+                            이 테스트는 AI 머신러닝 모델을 기반으로 하지만, 과학적으로 검증된 것은 아닙니다.
+                            재미와 오락 목적으로 즐겨주세요!
+                        </p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">Q. 업로드한 사진은 저장되나요?</h3>
+                        <p class="faq-answer">
+                            아니요, 업로드하신 사진은 서버에 전송되거나 저장되지 않습니다.
+                            모든 분석은 브라우저 내에서 이루어지며, 페이지를 닫으면 사진은 자동으로 삭제됩니다.
+                        </p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">Q. 모바일에서도 이용할 수 있나요?</h3>
+                        <p class="faq-answer">
+                            네, 스마트폰과 태블릿 등 모든 기기에서 이용 가능합니다.
+                            갤러리에서 사진을 선택하거나 카메라로 직접 촬영할 수도 있습니다.
+                        </p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">Q. 강아지상과 고양이상 외에 다른 동물상도 있나요?</h3>
+                        <p class="faq-answer">
+                            현재 버전에서는 강아지상과 고양이상만 지원합니다.
+                            향후 토끼상, 여우상 등 더 많은 동물상을 추가할 예정입니다.
+                        </p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">Q. 비용이 드나요?</h3>
+                        <p class="faq-answer">
+                            완전 무료입니다! 회원가입도 필요 없으며, 횟수 제한 없이 이용하실 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Animal Types Description -->
+        <section class="animal-types-section">
+            <div class="container">
+                <h2 class="section-title">동물상 유형 소개</h2>
+                <div class="animal-types-container">
+                    <div class="animal-type dog-type">
+                        <h3>강아지상</h3>
+                        <p class="animal-emoji">🐶</p>
+                        <ul>
+                            <li>둥글고 큰 눈</li>
+                            <li>부드럽고 친근한 인상</li>
+                            <li>통통하거나 둥근 볼</li>
+                            <li>전체적으로 동글동글한 느낌</li>
+                            <li>밝고 활발한 이미지</li>
+                        </ul>
+                        <p class="animal-desc">
+                            강아지상은 누구에게나 친근하고 사랑스러운 인상을 줍니다.
+                            애교가 많고 사람들과 쉽게 어울리는 성격으로 인식됩니다.
+                        </p>
+                    </div>
+                    <div class="animal-type cat-type">
+                        <h3>고양이상</h3>
+                        <p class="animal-emoji">🐱</p>
+                        <ul>
+                            <li>올라간 눈꼬리</li>
+                            <li>날카롭고 시크한 인상</li>
+                            <li>갸름한 얼굴형</li>
+                            <li>도도하고 세련된 느낌</li>
+                            <li>신비로운 매력</li>
+                        </ul>
+                        <p class="animal-desc">
+                            고양이상은 도도하면서도 매력적인 분위기를 풍깁니다.
+                            츤데레 같은 성격으로 한번 빠지면 헤어나오기 어려운 매력이 있습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>동물상 테스트</h3>
+                    <p>AI 기반의 재미있는 동물상 분석 서비스</p>
+                </div>
+                <div class="footer-section">
+                    <h3>법적 고지</h3>
+                    <ul>
+                        <li><a href="privacy.html">개인정보처리방침</a></li>
+                        <li><a href="terms.html">이용약관</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>문의</h3>
+                    <p>이메일: contact@example.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 동물상 테스트. All rights reserved.</p>
+                <p>본 서비스는 오락 목적으로 제공되며, 과학적 근거가 있는 것은 아닙니다.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
     <script src="main.js"></script>
